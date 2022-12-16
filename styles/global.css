@@ -1,0 +1,32 @@
+body,
+html {
+	color: var(--black);
+	background-color: #E5E5E5;
+}
+
+a {
+	text-decoration: none;
+
+	color: inherit;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	font-family: "Noto Sans Mono", monospace;
+}
+
+
+:root {
+	--black: #3B434E;
+	--gray-light: #ebebeb;
+	--white: #ffffff;
+	--primary: #7653FC;
+	--primary-hover: #643dfc;
+	--red: #FC836D;
+	--green: #1DC37E;
+	--green-lite: #C8F8E4;
+	--font-family: "Noto Sans Mono", monospace;
+}
