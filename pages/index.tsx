@@ -1,9 +1,12 @@
 import Image from "next/image";
-import { Htag, Button, P } from "../components";
+import { useEffect, useState } from "react";
+import { Htag, Button, P, Tag, Rating } from "../components";
+import { Layout } from "../Layout/Layout";
 
 export default function Home() {
+    const [rating, setRating] = useState<number>(1);
     return (
-        <div>
+        <Layout>
             <Htag tag="h1">hello World</Htag>
             <Button appearance="ghost" arrow={"right"}>
                 on Click...
@@ -13,6 +16,20 @@ export default function Home() {
                 Cupiditate fugit quaerat voluptatem non fugiat voluptate ea cum.
                 Sit ipsam rerum rem blanditiis, fugit eveniet incidunt?
             </P>
-        </div>
+            <Tag size="S" color="red">
+                red
+            </Tag>
+            <Tag size="M" color="ghost">
+                ghost
+            </Tag>
+            <Tag size="M" color="green">
+                Green
+            </Tag>
+            <Tag color="primary">primary</Tag>
+            <Tag color="grey" href="google.com">
+                gray
+            </Tag>
+            <Rating rating={rating} isEditable setRating={setRating} />
+        </Layout>
     );
 }
