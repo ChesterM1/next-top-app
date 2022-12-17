@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Htag, Button, P, Tag, Rating } from "../components";
-import { Layout } from "../Layout/Layout";
+import { Layout, withLayout } from "../Layout/Layout";
 
-export default function Home() {
+function Home() {
     const [rating, setRating] = useState<number>(1);
     return (
-        <Layout>
+        <>
             <Htag tag="h1">hello World</Htag>
             <Button appearance="ghost" arrow={"right"}>
                 on Click...
@@ -30,6 +30,7 @@ export default function Home() {
                 gray
             </Tag>
             <Rating rating={rating} isEditable setRating={setRating} />
-        </Layout>
+        </>
     );
 }
+export default withLayout(Home);
