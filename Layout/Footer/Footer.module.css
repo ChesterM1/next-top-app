@@ -1,19 +1,27 @@
-.p {
-    color: var(--black);
-    font-weight: 400;
-}
-
-.s {
-    font-size: 14px;
-    line-height: 24px;
-}
-
-.m {
+.footer {
+    color: var(--white);
+    font-weight: 500;
     font-size: 16px;
-    line-height: 24px
+    line-height: 20px;
+    background-color: var(--primary);
+    padding: 30px 25px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px 40px;
 }
 
-.l {
-    font-size: 18px;
-    line-height: 29px;
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 842px) {
+    .footer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .footer a {
+        text-align: center;
+        display: inline-block;
+    }
 }
