@@ -8,10 +8,10 @@
     "build": "next build",
     "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "start": "next start",
-    "lint": "next lint",
-    "stylelint": "stylelint \"**/*.css\" --fix"
+    "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.2.1",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "next": "13.0.6",
@@ -28,10 +28,11 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.29.0",
     "eslint-config-next": "13.0.6",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "2.8.1",
     "stylelint": "^14.16.0",
     "stylelint-config-standard": "^29.0.0",
-    "stylelint-order": "^5.0.0",
     "typescript": "4.9.4"
   }
 }

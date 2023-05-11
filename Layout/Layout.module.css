@@ -36,7 +36,7 @@
             'footer';
     }
 
-    .sidebar {
+    .sidebar.hidden {
         display: none;
     }
 

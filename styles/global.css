@@ -20,9 +20,11 @@ a {
 
 
 :root {
-	--black: #3B434E;
-	--gray-light: #ebebeb;
 	--white: #ffffff;
+	--black: #3B434E;
+	--blue-white: #F9F8FF;
+	--gray-light: #ebebeb;
+	--gray-dark: #787D85;
 	--primary: #7653FC;
 	--primary-hover: #643dfc;
 	--red: #FC836D;
