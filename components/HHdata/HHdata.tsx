@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './HHdata.module.css';
 import { HHdataProps } from './HHdata.interface';
-import cn from 'classnames';
 import { Card } from '../Card/Card';
 import RateIcon from './rate.svg';
+import { priceRU } from '../../helpers/helpers';
 
 const HHdata = ({ count, juniorSalary, middleSalary, seniorSalary }: HHdataProps) => {
   return (
@@ -16,7 +16,7 @@ const HHdata = ({ count, juniorSalary, middleSalary, seniorSalary }: HHdataProps
       <Card className={styles.salary}>
         <div>
           <div className={styles.title}>Начальный</div>
-          <div className={styles.salaryValue}>{juniorSalary}</div>
+          <div className={styles.salaryValue}>{priceRU(juniorSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.filled} />
             <RateIcon />
@@ -26,7 +26,7 @@ const HHdata = ({ count, juniorSalary, middleSalary, seniorSalary }: HHdataProps
 
         <div>
           <div className={styles.title}>Срейдний</div>
-          <div className={styles.salaryValue}>{middleSalary}</div>
+          <div className={styles.salaryValue}>{priceRU(middleSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.filled} />
             <RateIcon className={styles.filled} />
@@ -36,7 +36,7 @@ const HHdata = ({ count, juniorSalary, middleSalary, seniorSalary }: HHdataProps
 
         <div>
           <div className={styles.title}>Профессионал</div>
-          <div className={styles.salaryValue}>{seniorSalary}</div>
+          <div className={styles.salaryValue}>{priceRU(seniorSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.filled} />
             <RateIcon className={styles.filled} />

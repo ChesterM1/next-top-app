@@ -1,6 +1,6 @@
 import React from 'react';
 import { TopPageComponentProps } from './TopPageComponent.interface';
-import { Card, Htag, Tag } from '../../components';
+import { Htag, Tag, AdvantagesItem, P } from '../../components';
 import styles from './TopPageComponent.module.css';
 import HHdata from '../../components/HHdata/HHdata';
 import { TopLevelCategory } from '../../interfaces/page.interface';
@@ -29,7 +29,29 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
         )}
       </div>
 
-      {firstCategory === TopLevelCategory.Course && <HHdata {...page.hh} />}
+      {firstCategory === TopLevelCategory.Course && page.hh && <HHdata {...page.hh} />}
+
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <Htag tag="h2" className={styles.advantages}>
+            Преимущества
+          </Htag>
+          {page.advantages.map((a) => (
+            <AdvantagesItem key={a._id} {...a} />
+          ))}
+        </>
+      )}
+
+      {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
+
+      <Htag tag="h2" className={styles.skills}>
+        Получаемые навыки
+      </Htag>
+      {page.tags.map((t) => (
+        <Tag key={t} color="primary">
+          {t}
+        </Tag>
+      ))}
     </div>
   );
 };

@@ -1,0 +1,30 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 10px 40px;
+    margin-bottom: 30px;
+}
+
+.icons{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.divider{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 1px;
+    justify-self: center;
+    background: var(--gray-300);
+}
+
+.title{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.text{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}

@@ -43,26 +43,26 @@ export interface Learningclub {
 }
 
 export interface TopPageModal {
-    _id: string;
-    tags: string[];
-    secondCategory: string;
-    alias: string;
-    title: string;
-    category: string;
-    seoText: string;
-    tagsTitle: string;
-    metaTitle: string;
-    metaDescription: string;
-    firstCategory: TopLevelCategory;
-    advantages: TopPageAdvantage[];
-    createdAt: Date;
-    updatedAt: Date;
-    __v: number;
-    hh: HhData;
-    qas: any[];
-    addresses: any[];
-    categoryOn: string;
-    blog: Blog;
-    sravnikus: Sravnikus;
-    learningclub: Learningclub;
+  _id: string;
+  tags: string[];
+  secondCategory: string;
+  alias: string;
+  title: string;
+  category: string;
+  seoText?: string;
+  tagsTitle: string;
+  metaTitle: string;
+  metaDescription: string;
+  firstCategory: TopLevelCategory;
+  advantages?: TopPageAdvantage[];
+  createdAt: Date;
+  updatedAt: Date;
+  __v: number;
+  hh?: HhData;
+  qas: any[];
+  addresses: any[];
+  categoryOn: string;
+  blog: Blog;
+  sravnikus: Sravnikus;
+  learningclub: Learningclub;
 }
