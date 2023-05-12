@@ -1,0 +1,32 @@
+.sort{
+    display: flex;
+    gap: 40px;
+}
+
+.price, .rating{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.price span, .rating span{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--black-900);
+    cursor: pointer;
+}
+
+.price svg, .rating svg{
+    display: none;
+}
+
+.price.active span, .rating.active span{
+    color: var(--primary);
+    font-weight: 700;
+    cursor: default;
+}
+
+.price.active svg, .rating.active svg{
+    display: block;
+}

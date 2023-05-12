@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { TopPageComponentProps } from './TopPageComponent.interface';
-import { Htag, Tag, AdvantagesItem, P } from '../../components';
+import { Htag, Tag, AdvantagesItem, Sort } from '../../components';
 import styles from './TopPageComponent.module.css';
 import HHdata from '../../components/HHdata/HHdata';
 import { TopLevelCategory } from '../../interfaces/page.interface';
+import { sortReducer } from './sort.reducer';
+import { Sort as SortType } from '../../components/Sort/Sort.interface';
 
-const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps) => {
+export const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps) => {
+  const [{ products: sortProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: 'rating' });
+
+  const setSort = (sort: SortType) => {
+    dispatchSort({ type: sort });
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -15,14 +23,14 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
             {products.length}
           </Tag>
         )}
-        <span>Сортировка</span>
+        <Sort sort={sort} setSort={setSort} />
       </div>
 
-      <div>{products && products.map((p) => <div key={p._id}>{p.title}</div>)}</div>
+      <div>{sortProducts && sortProducts.map((p) => <div key={p._id}>{p.title}</div>)}</div>
 
       <div className={styles.hhTitle}>
         <Htag tag="h2">Вакансии - {page.category}</Htag>
-        {products && (
+        {sortProducts && (
           <Tag color="red" size="m">
             hh.ru
           </Tag>
@@ -48,12 +56,10 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
         Получаемые навыки
       </Htag>
       {page.tags.map((t) => (
-        <Tag key={t} color="primary">
+        <Tag className={styles.tag} key={t} color="primary">
           {t}
         </Tag>
       ))}
     </div>
   );
 };
-
-export default TopPageComponent;
