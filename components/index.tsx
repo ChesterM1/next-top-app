@@ -6,4 +6,7 @@ export * from './Rating/Rating';
 export * from './Card/Card';
 export * from './HHdata/HHdata';
 export * from './AdvantagesItem/AdvantagesItem';
-export * from './Sort/Sort';    
+export * from './Sort/Sort';
+export * from './Input/Input';
+export * from './TextArea/TextArea';
+export * from './Search/Search';
